@@ -167,6 +167,20 @@ body {
     margin-bottom: 2rem;
 }
 
+.hero-text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-variant: small-caps;
+    color: #CBB18A;
+    margin-bottom: 2rem;
+}
+
 .hero-title-wrapper {
     width: 671px;
     max-width: 100%;
@@ -257,10 +271,33 @@ body {
 
 .info-card {
     position: relative;
-    width: 400px;
-    height: 258px;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
+    background: #1A1A1A;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    color: inherit;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    color: inherit;
+}
+
+.info-card:hover .info-card-gradient {
+    opacity: 0.8;
+}
+
+.info-card:active {
+    transform: translateY(-2px);
+}
+
+/* Kursor wskazujący na karty */
+.info-card {
+    cursor: pointer;
 }
 
 /* Tło karty */

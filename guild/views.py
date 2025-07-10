@@ -18,6 +18,10 @@ def campaign_list(request):
 def campaign_detail(request, pk):
     return render(request, 'guild/campaigns/detail.html')
 
+#Widoki dla eventów
+def event_list(request):
+    return render(request, 'guild/events/list.html')
+
 # Widoki dla kalendarza
 def calendar_view(request):
     return render(request, 'guild/calendar/calendar.html')

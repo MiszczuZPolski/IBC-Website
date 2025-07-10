@@ -20,13 +20,17 @@
             <span>BASTERDS CLAN</span>
         </div>
     </div>
+
+    <div class="hero-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+    </div>
 </section>
 
 
 <!-- Info Grid Section -->
 <section class="info-grid">
     <!-- O Nas -->
-    <div class="info-card">
+    <a href="{% url 'guild:about' %}" class="info-card">
         <div class="info-card-gradient"></div>
         <div class="info-card-content">
             <h3 class="info-card-title">O Nas</h3>
@@ -34,10 +38,11 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
             </p>
         </div>
-    </div>
+    </a>
+
 
     <!-- Kampanie -->
-    <div class="info-card">
+    <a href="{% url 'guild:campaign_list' %}" class="info-card">
         <div class="info-card-gradient"></div>
         <div class="info-card-content">
             <h3 class="info-card-title">Kampanie</h3>
@@ -45,10 +50,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
             </p>
         </div>
-    </div>
+    </a>
 
     <!-- Eventy -->
-    <div class="info-card">
+    <a href="{% url 'guild:event_list' %}" class="info-card">
         <div class="info-card-gradient"></div>
         <div class="info-card-content">
             <h3 class="info-card-title">Eventy</h3>
@@ -56,10 +61,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
             </p>
         </div>
-    </div>
+    </a>
 
     <!-- Klanowicze -->
-    <div class="info-card">
+    <a href="{% url 'guild:member_list' %}" class="info-card">
         <div class="info-card-gradient"></div>
         <div class="info-card-content">
             <h3 class="info-card-title">Klanowicze</h3>
@@ -67,10 +72,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
             </p>
         </div>
-    </div>
+    </a>
 
     <!-- Kalendarz -->
-    <div class="info-card">
+    <a href="{% url 'guild:calendar' %}" class="info-card">
         <div class="info-card-gradient"></div>
         <div class="info-card-content">
             <h3 class="info-card-title">Kalendarz</h3>
@@ -78,10 +83,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
             </p>
         </div>
-    </div>
+    </a>
 
     <!-- Galeria -->
-    <div class="info-card">
+    <a href="{% url 'guild:gallery' %}" class="info-card">
         <div class="info-card-gradient"></div>
         <div class="info-card-content">
             <h3 class="info-card-title">Galeria</h3>
@@ -89,6 +94,6 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
             </p>
         </div>
-    </div>
+    </a>
 </section>
 {% endblock %}

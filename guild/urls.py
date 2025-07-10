@@ -15,6 +15,7 @@ urlpatterns = [
     path('campaigns/<int:pk>/', views.campaign_detail, name='campaign_detail'),
 
     # Eventy
+    path('events/', views.event_list, name='event_list'),
 
     #Kalendarz
     path('calendar/', views.calendar_view, name='calendar'),
