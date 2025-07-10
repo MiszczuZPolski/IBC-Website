@@ -1,0 +1,45 @@
+
+{% extends 'guild/base.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    {% if member.avatar_url %}
+                    <div class="col-md-3 text-center">
+                        <img src="{{ member.avatar_url }}" alt="Discord Avatar" class="img-fluid rounded-circle profile-img mb-3">
+                    </div>
+                    {% endif %}
+                    <div class="col-md-9">
+                        <h2 class="mb-4">{{ member.name }}</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fab fa-discord"></i>
+                                <strong>Discord:</strong> {{ member.discord_username }}
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user-tag"></i>
+                                <strong>Role:</strong> {{ member.role }}
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <strong>Join Date:</strong> {{ member.join_date }}
+                            </div>
+                            {% if member.description %}
+                            <div class="info-item">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>About:</strong> {{ member.description }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

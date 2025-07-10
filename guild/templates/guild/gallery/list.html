@@ -1,0 +1,95 @@
+
+{% extends 'guild/base.html' %}
+{% load static %}
+
+{% block title %}Galeria - IBC{% endblock %}
+
+{% block content %}
+<div class="gallery-container">
+    <div class="gallery-header">
+        <h1>Galeria IBC</h1>
+        {% if user.is_authenticated %}
+            <a href="{% url 'guild:gallery_upload' %}" class="btn btn-primary">
+                <i class="fas fa-upload"></i> Dodaj zdjęcie
+            </a>
+        {% endif %}
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="text-end mb-4">
+        <a href="{% url 'guild:gallery_upload' %}" class="btn btn-primary">
+            <i class="fas fa-upload"></i> Dodaj zdjęcie
+        </a>
+    </div>
+    {% endif %}
+
+
+    <div class="gallery-grid">
+        {% for image in images %}
+        <div class="gallery-item">
+            <img src="{{ image.image.url }}" alt="{{ image.title }}" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imageModal{{ image.id }}">
+            <div class="gallery-item-overlay">
+                <h3>{{ image.title }}</h3>
+                <p class="likes-count">
+                    <i class="fas fa-heart"></i> {{ image.get_likes_count }}
+                </p>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="imageModal{{ image.id }}" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ image.title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid">
+                        <p class="mt-3">{{ image.description }}</p>
+                        <div class="image-meta">
+                            <small>Dodane przez: {{ image.uploaded_by.username }} | {{ image.upload_date|date:"d.m.Y" }}</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {% if user.is_authenticated %}
+                        <button class="btn btn-like {% if user in image.likes.all %}liked{% endif %}" 
+                                data-image-id="{{ image.id }}">
+                            <i class="fas fa-heart"></i>
+                            <span class="likes-count">{{ image.get_likes_count }}</span>
+                        </button>
+                        {% endif %}
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="no-images">
+            <p>Brak zdjęć w galerii</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.querySelectorAll('.btn-like').forEach(button => {
+    button.addEventListener('click', function() {
+        const imageId = this.dataset.imageId;
+        fetch(`/gallery/like/${imageId}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            this.classList.toggle('liked', data.liked);
+            this.querySelector('.likes-count').textContent = data.likes_count;
+        });
+    });
+});
+</script>
+{% endblock %}

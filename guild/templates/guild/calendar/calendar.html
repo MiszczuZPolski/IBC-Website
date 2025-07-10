@@ -1,0 +1,75 @@
+{% extends 'guild/base.html' %}
+{% load static %}
+{% load calendar_tags %}
+
+{% block title %}Guild Calendar{% endblock %}
+
+{% block content %}
+<div class="calendar-container">
+    <div class="calendar-header">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Guild Events Calendar</h2>
+            {% if user.is_staff %}
+            <a href="{% url 'guild:event_create' %}" class="btn btn-discord">
+                <i class="fas fa-plus"></i> Dodaj wydarzenie
+            </a>
+            {% endif %}
+        </div>
+        <div class="calendar-navigation d-flex justify-content-between align-items-center mb-4">
+            <a href="?year={{ prev_month.year }}&month={{ prev_month.month }}" class="btn btn-discord">
+                <i class="fas fa-chevron-left"></i> Previous Month
+            </a>
+            <h3 class="mb-0">{{ month_name }}</h3>
+            <a href="?year={{ next_month.year }}&month={{ next_month.month }}" class="btn btn-discord">
+                Next Month <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="calendar-grid">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for week in calendar %}
+                <tr>
+                    {% for day in week %}
+                    <td class="calendar-day {% if day == 0 %}empty{% endif %}">
+                        {% if day != 0 %}
+                            <div class="day-number">{{ day }}</div>
+                            {% if day in events_by_day %}
+                                <div class="events-list">
+                                    {% for event in events_by_day|get_item:day %}
+                                        <div class="event-item" title="{{ event.description }}">
+                                            <span class="event-time">{{ event.start_time|time:"H:i" }}</span>
+                                            <span class="event-title">{{ event.title }}</span>
+                                            {% if user.is_staff %}
+                                            <a href="{% url 'guild:event_delete' event.id %}" 
+                                               class="text-danger float-end" 
+                                               onclick="return confirm('Czy na pewno chcesz usunąć to wydarzenie?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
