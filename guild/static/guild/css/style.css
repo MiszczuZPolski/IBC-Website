@@ -234,11 +234,6 @@ body {
     width: 100%;
 }
 
-.line1, .line2, .line3 {
-    display: inline-block;
-    width: 100%;
-}
-
 .hero-overlay {
     position: absolute;
     top: 0;
