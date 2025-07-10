@@ -72,24 +72,3 @@
     </div>
 </div>
 {% endblock %}
-
-{% block extra_js %}
-<script>
-document.querySelectorAll('.btn-like').forEach(button => {
-    button.addEventListener('click', function() {
-        const imageId = this.dataset.imageId;
-        fetch(`/gallery/like/${imageId}/`, {
-            method: 'POST',
-            headers: {
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            this.classList.toggle('liked', data.liked);
-            this.querySelector('.likes-count').textContent = data.likes_count;
-        });
-    });
-});
-</script>
-{% endblock %}

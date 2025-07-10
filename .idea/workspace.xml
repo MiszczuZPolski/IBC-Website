@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a5ad88c-28c1-4ae7-b04e-973befd8fbb1" name="Changes" comment="Gitignore" />
+    <list default="true" id="5a5ad88c-28c1-4ae7-b04e-973befd8fbb1" name="Changes" comment="Gitignore">
+      <change afterPath="$PROJECT_DIR$/guild/templates/guild/campaigns/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guild/templates/guild/campaigns/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guild/templates/guild/easteregg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guild/templates/guild/members/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guild/templates/guild/members/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guild/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/guild/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guild/static/guild/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/guild/static/guild/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guild/templates/guild/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/guild/templates/guild/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guild/templates/guild/gallery/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/guild/templates/guild/gallery/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guild/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/guild/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guild/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/guild/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +63,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -68,6 +85,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
@@ -77,6 +95,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -120,8 +139,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PY-251.26094.141" />
-        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.74" />
+        <option value="bundled-python-sdk-657d8234b839-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.74" />
       </set>
     </attachedChunks>
   </component>
@@ -145,7 +164,10 @@
       <workItem from="1752165894883" duration="200000" />
       <workItem from="1752166163395" duration="10000" />
       <workItem from="1752166419114" duration="9000" />
-      <workItem from="1752166454253" duration="118000" />
+      <workItem from="1752166454253" duration="1550000" />
+      <workItem from="1752168200002" duration="957000" />
+      <workItem from="1752171360702" duration="191000" />
+      <workItem from="1752171626650" duration="2042000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />

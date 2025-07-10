@@ -1,13 +1,7 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.admin.views.decorators import staff_member_required
-from django.contrib import messages
-from django.contrib.auth import login,authenticate
+from django.shortcuts import render, redirect
+from .forms import GalleryUploadForm
 from .models import GalleryImage
-from .forms import LoginForm, GalleryUploadForm
-from datetime import datetime, timedelta
-from calendar import monthcalendar
-from django.utils import timezone
 
 
 # Create your views here.
@@ -30,13 +24,11 @@ def calendar_view(request):
 
 # Widoki dla członków
 def member_list(request):
-    members = Member.objects.all()
-    return render(request, 'guild/members/list.html', {'members': members})
+    return render(request, 'guild/members/list.html')
 
 @login_required
 def profile(request):
-    member = get_object_or_404(Member, user=request.user)
-    return render(request, 'guild/members/profile.html', {'member': member})
+    return render(request, 'guild/members/profile.html')
 
 #Widoki dla galerii
 def gallery(request):
@@ -55,4 +47,8 @@ def gallery_upload(request):
     else:
         form = GalleryUploadForm()
     return render(request, 'guild/gallery/upload.html', {'form': form})
+
+#Widoki dla Easter Egga
+def easter_egg(request):
+    return render(request, 'guild/easteregg.html')
 

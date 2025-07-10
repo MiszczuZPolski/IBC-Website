@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 app_name = 'guild'
@@ -26,4 +26,7 @@ urlpatterns = [
     # Galeria
     path('gallery/', views.gallery, name='gallery'),
     path('gallery/upload/', views.gallery_upload, name='gallery_upload'),
+
+    #Easter Egg
+    path('easter-egg/', views.easter_egg, name='easter_egg'),
 ]
